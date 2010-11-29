@@ -42,9 +42,9 @@ test_calltermite(Termite) ->
 			io:format("Die Termite heißt: ~p ~n", [Name]),
 			Name;
 		Other ->
-			io:format("Falsche Antwort auf getname")
+			io:format("wrong response for getname")
 	after 4000 ->
-			io:format("Keine Antwort auf getname")
+			io:format("no response for getname")
 	end.
 
 
