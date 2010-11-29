@@ -39,7 +39,7 @@ test_calltermite(Termite) ->
 	Termite ! {get_name_request, self()},
 	receive
 		{get_name_response, Pid, {Name}} ->
-			io:format("Die Termite heißt: ~p ~n", [Name]),
+			io:format("Termite is called: ~p ~n", [Name]),
 			Name;
 		Other ->
 			io:format("wrong response for getname")
