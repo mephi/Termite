@@ -1,26 +1,11 @@
-%% Author: boettchera
-%% Created: 26.10.2010
-%% Description: TODO: Add description to termite
 -module(termite).
 
 
-
-%%
-%% Include files
-%%
-
-%%
-%% Exported Functions
-%%
 -export([start/1,loop/2]).
 
-%%
-%% API Functions
-%%
 
 start(Id) ->
 	spawn(?MODULE, loop, [Id,[]]).
-
 
 
 loop(Id, Data) ->
@@ -32,10 +17,4 @@ loop(Id, Data) ->
 			io:format("Dont understand anything:"),
 			loop(Id,Data)
 	end.
-
-
-%%
-%% Local Functions
-%%
-
 

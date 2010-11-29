@@ -1,28 +1,17 @@
-%% Author: boettchera
-%% Created: 26.10.2010
-%% Description: TODO: Add description to hive
 -module(hive).
+
 
 -record(termite,
 		{id,
 		pid}).
 
 
-%%
-%% Include files
-%%
-
-%%
-%% Exported Functions
-%%
 -export([start/0, loop/1]).
 
-%%
-%% API Functions
-%%
 
 start() ->
 	register(hive, spawn(?MODULE, loop, [[]])).
+
 
 loop(Termites) ->
 	receive
@@ -47,14 +36,11 @@ loop(Termites) ->
 			io:format("Cannot handle msg:"),
 			loop(Termites)
 	end.
-	
 
-%%
-%% Local Functions
-%%
 
 gettermite(_, []) ->
 	[];
+
 
 gettermite(Name, [Termite|Termites]) ->
 	Name2 = Termite#termite.id,
@@ -64,8 +50,3 @@ gettermite(Name, [Termite|Termites]) ->
 		_ ->
 			gettermite(Name, Termites)
 	end.
-
-
-	
-
-
