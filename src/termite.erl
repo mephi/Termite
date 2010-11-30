@@ -14,7 +14,7 @@ loop(Id, Data) ->
 			Pid ! {get_name_response, self(), {Id}},
 			loop(Id, Data);
 		Other ->
-			io:format("Dont understand anything:"),
-			loop(Id,Data)
+			io:format("Dont understand anything: "),
+			loop(Id, Data)
 	end.
 
